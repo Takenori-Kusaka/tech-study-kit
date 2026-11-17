@@ -12,15 +12,16 @@
 ## スライドの約束
 
 - 1 枚 1 メッセージ。タイトルは結論の文にする
-- 根拠の行 `refs: { spec, inst, book }` を全スライドに置く（[templates/deck/lib.js](../templates/deck/lib.js) の `L.refs`）。book は『書名』章・節 p.xx
+- 根拠の行 `refs: { spec, inst, book }` を全スライドに置く（デッキの生成器の `L.refs`）。book は『書名』章・節 p.xx
 - 発表者ノートに、スライドに書けなかった説明と但し書きを書く（読むだけで発表できる量）
 - 製品名・仕様名・数値には日付と版を添える
 - 用語は初出で説明する。表記はファイル冒頭の用語表で揃える
 
 ## 作り方
 
+リポジトリの立ち上げは [01 の「新しいリポジトリを立ち上げる」](01-scoping.md#新しいリポジトリを立ち上げる)。
+
 ```bash
-bash scripts/new-project.sh <slug> "<タイトル>"   # 雛形を作る
 cd E:/Github/<slug>-guide/deck && npm ci           # 初回だけ
 bash make.sh                                        # pptx → 検証 → QA（PNG・はみ出し・重なり）
 powershell -File export.ps1                         # PDF と 2560×1440 の PNG

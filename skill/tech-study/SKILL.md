@@ -10,14 +10,14 @@ description: 新しい技術スタック・技術領域について、新任テ�
 ## 最初にすること
 
 1. `E:\Github\tech-study-kit` が無ければ `gh repo clone Takenori-Kusaka/tech-study-kit E:/Github/tech-study-kit`。あれば `git -C E:/Github/tech-study-kit pull`
-2. `playbook/00-overview.md` を読み、フェーズと関門に沿って進める。各フェーズに入るときにその章（01〜07）を読む。`playbook/08-lessons.md` は着手前に必ず読む
+2. `principles/` の考え方と `playbook/00-overview.md` を読み、フェーズと関門に沿って進める。各フェーズに入るときにその章（01〜07）を読む。`playbook/08-lessons.md` は着手前に必ず読む
 3. `df -h /c /e` でディスクを確かめる（成果物・コンテナ・node_modules は E:）
 
 ## 進め方の要点
 
 - 範囲を AskUserQuestion で 1 回にまとめて聞き、焦点を言い換えて齟齬を潰す（01）
 - 根拠は一次資料・権威ある機関・日本語の書籍（章・節・印刷ページ）。書籍はユーザーが買う（02）
-- 雛形は `bash E:/Github/tech-study-kit/scripts/new-project.sh <slug> "<タイトル>"`（03）
+- テーマごとに新しいリポジトリ（`<slug>-guide`、`<slug>-casestudy`）を作り、調査資料はそこに集める。道具（デッキの生成器など）は直近の回のリポジトリからコピーし、過去の中身は持ち込まない（01）
 - 書いた本人と別の担当がレビューする：ファクトチェック 3 観点、列の自己レビュー、判定の点検、記事の査読（prompts/）
 - ケーススタディは N・B・BE と除去実験。測っていないものは「未検証」（05）
 - 一覧表は空欄を残さない。修正はスクリプトで（06）
@@ -26,4 +26,4 @@ description: 新しい技術スタック・技術領域について、新任テ�
 ## 終わったら
 
 - `examples/projects.md` に今回の成果物の URL と、新しく学んだ教訓を足す。教訓は `playbook/08-lessons.md` にも足す
-- 雛形やスクリプトを改良したら、キットに戻してコミット・push する（次の回が楽になるように）
+- 新しく得た考え方・ノウハウは `principles/` と `playbook/` に足して、コミット・push する（成果物そのものはキットに入れない）

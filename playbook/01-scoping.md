@@ -30,3 +30,23 @@
 ## ディスクと環境の確認
 
 着手前に `df -h /c /e`。C: は逼迫しやすい。Docker（WSL）のディスク、node_modules、PDF は E: に置く。
+
+## 新しいリポジトリを立ち上げる
+
+範囲が決まったら、テーマごとに**新しいリポジトリを 2 つ**作り、以後の調査資料はすべてそこに集める（過去の回の資料やスライドは持ち込まない。持ち込むのは道具だけ）。
+
+| リポジトリ | 置くもの |
+| --- | --- |
+| `E:\Github\<slug>-guide` | `research/outline.md`、`research/notes/`（調査ノート）、`research/reviews/`（ファクトチェックの記録）、`research/books/`（書籍の PDF・抽出本文。gitignore）、`deck/`（生成器とパート）、`slides/`（公開する pptx・PDF）、`docs/`（Web 版、GitHub Pages）、`tools/` |
+| `E:\Github\<slug>-casestudy` | `cs/`（実験の仕組み）、`results/`、`catalog/`（一覧表を作るなら）、コンテナの設定、`keys/`（試験用の鍵。gitignore） |
+
+手順：
+
+1. `mkdir` → `git init`。最初のコミットは `README.md`（目的・読者・調査日）、`.gitignore`、`research/outline.md`
+2. `.gitignore`：`research/books/`、`deck/node_modules/`、`deck/qa/`、`deck/*.pptx`（公開用は `slides/` に置く）、`research/deck_text.md`、手元のパスを含むスクリプト、`keys/`、`.venv/`
+3. **道具**は直近の回のリポジトリからコピーする（中身のスライドや調査ノートはコピーしない）：デッキの生成器 `deck/lib.js`・`build.js`・`theme.js`・`qa.ps1`・`export.ps1`、Web 版の `tools/build_web_slides.py`、一覧表の `catalog/scripts/`。テーマの色・パンくずの段階・定数だけを書き換える。どの回のどのコミットから持ってきたかを README に書く
+4. 公開するまではローカルだけ。公開は [07](07-publish.md)（その都度確認）
+5. 調査のサブエージェントには、書き込み先のパス（`research/notes/<番号>_<名前>.md`）を必ず指定する。散らばった一時ファイル（NIST の PDF など）はリポジトリの外（`E:\Github\_scratch_<slug>\`）へ
+
+直近の道具の場所は [examples/projects.md](../examples/projects.md)。
+

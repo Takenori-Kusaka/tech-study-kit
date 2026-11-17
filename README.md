@@ -16,20 +16,20 @@
 
 1. スキルを入れる（初回だけ）: `bash scripts/install-skill.sh`（`~/.claude/skills/tech-study/` に SKILL.md を写す）
 2. Claude Code で「〇〇について、前回と同じようにガイドとケーススタディを作って」と頼むか、`/tech-study <テーマ>` を呼ぶ
-3. スキルが [playbook/](playbook/) の手順を順に進める。雛形は `bash scripts/new-project.sh <slug> "<日本語タイトル>"` で作る
+3. スキルが [principles/](principles/)（考え方）と [playbook/](playbook/)（手順）に沿って進める。テーマごとに新しいリポジトリを作り、調査資料はそこに集める（[playbook/01](playbook/01-scoping.md#新しいリポジトリを立ち上げる)）
 
 ## 構成
 
 - [playbook/](playbook/) — 手順書（00 全体像 → 08 教訓）。**ここが正本**
 - [prompts/](prompts/) — サブエージェントに渡す指示の雛形（調査・ファクトチェック・列の自己レビュー・判定の点検・記事の執筆）
 - [skill/tech-study/SKILL.md](skill/tech-study/SKILL.md) — Claude Code のスキル（手順書への入口）
-- `templates/` — デッキの生成器（pptxgenjs）、QA（PowerPoint COM）、Web 版の生成、リポジトリの雛形、一覧表のパイプライン、除去実験の骨組み
-- `scripts/` — 新しいテーマの作成、スキルのインストール
+- [principles/](principles/) — ベースとなる考え方（調査・ガイドの設計・ケーススタディ・検証の指針・WSL と Docker のノウハウ・進め方）
+- `scripts/` — スキルのインストール
 - [examples/projects.md](examples/projects.md) — これまでの成果物と、それぞれで学んだこと
 
 ## 状態（2026-11-18）
 
-手順書・指示の雛形・スキルは JWT の回までの実績から書いたもの。`templates/` と `scripts/new-project.sh` は JWT の回の実物を汎用化したもので、**まだ実際のテーマで通しの動作検証をしていない**。次の技術スタックの回で最初に動かして確かめ、直したらこの節を更新する。
+このリポジトリは**進め方のノウハウだけ**を置く。過去の回のスライド・調査資料・コードは持ち込まない（道具が要るときは、直近の回のリポジトリから新しいリポジトリへコピーする）。次の技術スタックの回で、この手順どおりに再現できるかを確かめ、直したらこの節を更新する。
 
 ## 前提の環境
 
