@@ -27,6 +27,10 @@
 - `scripts/` — 新しいテーマの作成、スキルのインストール
 - [examples/projects.md](examples/projects.md) — これまでの成果物と、それぞれで学んだこと
 
+## 状態（2026-11-18）
+
+手順書・指示の雛形・スキルは JWT の回までの実績から書いたもの。`templates/` と `scripts/new-project.sh` は JWT の回の実物を汎用化したもので、**まだ実際のテーマで通しの動作検証をしていない**。次の技術スタックの回で最初に動かして確かめ、直したらこの節を更新する。
+
 ## 前提の環境
 
 - Windows 11 + Git Bash、PowerShell、PowerPoint（QA と PDF 出力に COM を使う）
