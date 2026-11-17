@@ -1,6 +1,8 @@
 # 01 範囲を決める
 
-## 最初に聞くこと（AskUserQuestion で 1 回にまとめる）
+## 最初に聞くこと
+
+ヒアリングは 1 回で済ませず、3〜5 回に分けて brief.md を固める（進め方と brief・plan の型は `/tech-study` スキル `.claude/skills/tech-study/SKILL.md`）。下は必ず決めること。
 
 1. **形式**：ガイドだけ／ガイド＋ケーススタディ（推奨）
 2. **対象の製品・実装**：主要な 3〜5 製品（例：IdP なら Entra ID・Keycloak・Auth0/Okta・Cognito）。ケーススタディで実機を動かせる OSS を 1 つは入れる

@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-# Copy the tech-study skill into the user's Claude Code skills directory (small text file only).
+# Optional: make /tech-study available outside this directory too (copies the project skill to the user's skills dir).
+# Inside this repository the skill is already available from .claude/skills/tech-study/.
 #   bash scripts/install-skill.sh
 set -euo pipefail
 here="$(cd "$(dirname "$0")/.." && pwd)"
 dest="${CLAUDE_SKILLS_DIR:-$HOME/.claude/skills}/tech-study"
 mkdir -p "$dest"
-cp "$here/skill/tech-study/SKILL.md" "$dest/SKILL.md"
+cp "$here/.claude/skills/tech-study/SKILL.md" "$dest/SKILL.md"
 echo "installed: $dest/SKILL.md"

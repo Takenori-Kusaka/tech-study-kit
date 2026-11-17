@@ -14,17 +14,25 @@
 
 ## 使い方
 
-1. スキルを入れる（初回だけ）: `bash scripts/install-skill.sh`（`~/.claude/skills/tech-study/` に SKILL.md を写す）
-2. Claude Code で「〇〇について、前回と同じようにガイドとケーススタディを作って」と頼むか、`/tech-study <テーマ>` を呼ぶ
-3. スキルが [principles/](principles/)（考え方）と [playbook/](playbook/)（手順）に沿って進める。テーマごとに新しいリポジトリを作り、調査資料はそこに集める（[playbook/01](playbook/01-scoping.md#新しいリポジトリを立ち上げる)）
+```bash
+git clone https://github.com/Takenori-Kusaka/tech-study-kit E:/Github/tech-study-kit   # 初回だけ
+cd E:/Github/tech-study-kit && claude
+```
+
+Claude Code で `/tech-study <調べたい技術スタック・テーマ>`（例：`/tech-study JWT トークンの基本とカスタムクレーム設計`）。
+
+1. 複数回のヒアリングで、背景・目的・読者・範囲・成果物・制約を固め、`brief.md` を承認する
+2. 下調べのうえで計画（Part 構成、ケーススタディの題材と測り方、書籍、公開先）を `plan.md` にまとめ、承認する
+3. キットの隣に `<slug>-guide` と `<slug>-casestudy` が作られ、調査 → ガイド → ケーススタディ → レビュー → 公開（GitHub・Pages・Docswell）→ 記事（publishing-hub）→ Teams の共有文、と進む。公開・購入・ログイン・マージはその都度ユーザーが承認・操作する
 
 ## 構成
 
 - [playbook/](playbook/) — 手順書（00 全体像 → 08 教訓）。**ここが正本**
 - [prompts/](prompts/) — サブエージェントに渡す指示の雛形（調査・ファクトチェック・列の自己レビュー・判定の点検・記事の執筆）
-- [skill/tech-study/SKILL.md](skill/tech-study/SKILL.md) — Claude Code のスキル（手順書への入口）
+- [.claude/skills/tech-study/SKILL.md](.claude/skills/tech-study/SKILL.md) — `/tech-study` スキル（段階と関門、ヒアリングの進め方、brief・plan の型）
+- [CLAUDE.md](CLAUDE.md) — 作業ディレクトリとしての約束
 - [principles/](principles/) — ベースとなる考え方（調査・ガイドの設計・ケーススタディ・検証の指針・WSL と Docker のノウハウ・進め方）
-- `scripts/` — スキルのインストール
+- `scripts/install-skill.sh` — キットの外でも `/tech-study` を使いたいときだけ
 - [examples/projects.md](examples/projects.md) — これまでの成果物と、それぞれで学んだこと
 
 ## 状態（2026-11-18）
